@@ -11,18 +11,37 @@ import SwiftUI
 // Shows and describe the layout of the app's contents
 struct ContentView: View {
     var body: some View { // can only return a single view
-        VStack(alignment: .leading) { // by default, stack's content are centered along the axis
-            Text("Turtle Rock")
-                .font(.title)
-            HStack {
-                Text("Joshua Tree National Park")
-                    .font(.subheadline)
-                Spacer()
-                Text("California")
-                    .font(.subheadline)
+        VStack {
+            // The View that shows the map
+            MapView()
+                .frame(height: 300)
+                .ignoresSafeArea(edges: .top) // this extends the mapview to the top egde of the screen
+            
+            // The View that show the image
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            
+            VStack(alignment: .leading) { // by default, stack's content are centered along the axis
+                Text("Turtle Rock")
+                    .font(.title)
+                HStack {
+                    Text("Joshua Tree National Park")
+                    Spacer()
+                    Text("California")
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                
+                Divider()
+                Text("About Turtle Rock")
+                    .font(.title2)
+                Text("Descriptive text goes here.")
             }
+            .padding()
+            Spacer()
         }
-        .padding()
             // View Modifiers (.font(), .padding(), etc )
             // that changes the view's (Text in this case) properties
             // by wrapping the view and returns a newly modified view
@@ -37,11 +56,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark) // this inherits dark mode
+            .preferredColorScheme(.light) // this inherits dark mode
         
         // Allows multiple previews to check for app's
         // visual with other modes
         ContentView()
-            .preferredColorScheme(.light) // light mode
+            .preferredColorScheme(.dark) // light mode
     }
 }
