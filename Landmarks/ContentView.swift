@@ -11,8 +11,11 @@ import SwiftUI
 // Shows and describe the layout of the app's contents
 struct ContentView: View {
     var body: some View {
-        Text("This is SwiftUi: Landmarks")
-            .padding()
+        Text("Turtle Rock")
+            .font(.title)
+            // View Modifiers
+            // that changes the view's (Text in this case) properties
+            // by wrapping the view and returns a newly modified view
     }
 }
 
