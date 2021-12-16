@@ -10,10 +10,20 @@ import SwiftUI
 // Struct conforming to View protocol
 // Shows and describe the layout of the app's contents
 struct ContentView: View {
-    var body: some View {
-        Text("Turtle Rock")
-            .font(.title)
-            // View Modifiers
+    var body: some View { // can only return a single view
+        VStack(alignment: .leading) { // by default, stack's content are centered along the axis
+            Text("Turtle Rock")
+                .font(.title)
+            HStack {
+                Text("Joshua Tree National Park")
+                    .font(.subheadline)
+                Spacer()
+                Text("California")
+                    .font(.subheadline)
+            }
+        }
+        .padding()
+            // View Modifiers (.font(), .padding(), etc )
             // that changes the view's (Text in this case) properties
             // by wrapping the view and returns a newly modified view
     }
