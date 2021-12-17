@@ -5,12 +5,13 @@
 //  Created by Vinmar Tipay on 15/12/2021.
 //
 
-import SwiftUI
+import SwiftUI // import swiftui library. SwiftUI mainly deals with presentation layer
 
-@main
-struct LandmarksApp: App {
-    var body: some Scene {
-        WindowGroup {
+// entry point
+@main // attribute that identifies the app's entry point
+struct LandmarksApp: App { // LandmarksApp struct conforms to App protocol
+    var body: some Scene { // Computed property (calculated each time body is accessed)
+        WindowGroup { // single return value allows the omittance of keyword 'return'
             ContentView()
         }
     }
